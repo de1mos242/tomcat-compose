@@ -8,6 +8,7 @@ COPY context.xml /usr/local/tomcat/conf/
 COPY postgresql-jdbc4.jar /usr/local/tomcat/lib/postgresql.jar
 COPY setenv.sh /usr/local/tomcat/bin/
 COPY entrypoint.sh /
+RUN chmod +x /entrypoint.sh
 
 VOLUME /usr/local/tomcat/webapps
 VOLUME /var/external-files
