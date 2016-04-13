@@ -24,16 +24,15 @@
     <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
 
     <!-- Uncomment this to disable session persistence across Tomcat restarts -->
-    <!--
+
     <Manager pathname="" />
-    -->
 
     <!-- Uncomment this to enable Comet connection tacking (provides events
          on session expiration as well as webapp lifecycle) -->
     <!--
     <Valve className="org.apache.catalina.valves.CometConnectionManagerValve" />
     -->
-<Resource name="jdbc/mainDB" auth="Container" type="javax.sql.DataSource" maxIdle="2" maxActive="4" maxWait="5000" username="${DB_USER}" password="${DB_PASSWORD}" driverClassName="org.postgresql.Driver" url="jdbc:postgresql://${DB_HOST}:5432/${DB_NAME}"/>
+<Resource name="jdbc/${DB_JNDI_NAME}" auth="Container" type="javax.sql.DataSource" maxIdle="2" maxActive="4" maxWait="5000" username="${DB_USER}" password="${DB_PASSWORD}" driverClassName="org.postgresql.Driver" url="jdbc:postgresql://${DB_HOST}:5432/${DB_NAME}"/>
 
 <Resources  className="org.apache.catalina.webresources.StandardRoot">
   <PreResources className="org.apache.catalina.webresources.DirResourceSet"
