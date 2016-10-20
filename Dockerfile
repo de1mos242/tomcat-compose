@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y gettext && apt-get install -y --no-inst
 
 COPY tomcat-users.xml /usr/local/tomcat/conf/tomcat-users.xml.tmpl
 COPY context.xml /usr/local/tomcat/conf/
+COPY tomcat-manager-web.xml /usr/local/tomcat/webapps/manager/WEB-INF/web.xml
 COPY postgresql-jdbc4.jar /usr/local/tomcat/lib/postgresql.jar
 COPY setenv.sh /usr/local/tomcat/bin/
 COPY entrypoint.sh /
