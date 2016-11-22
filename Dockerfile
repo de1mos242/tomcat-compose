@@ -11,6 +11,7 @@ COPY setenv.sh /usr/local/tomcat/bin/
 COPY entrypoint.sh /usr/local/tomcat/bin/
 
 VOLUME /usr/local/tomcat/webapps
+VOLUME /usr/local/tomcat/logs
 VOLUME /var/external-files
 
 ENTRYPOINT ["/usr/local/tomcat/bin/entrypoint.sh"]
