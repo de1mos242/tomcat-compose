@@ -14,6 +14,9 @@ VOLUME /usr/local/tomcat/webapps
 VOLUME /usr/local/tomcat/logs
 VOLUME /var/external-files
 
+ENV JAVA_XMS -Xms256m
+ENV JAVA_XMX -Xmx378m
+
 ENTRYPOINT ["/usr/local/tomcat/bin/entrypoint.sh"]
 
 CMD ["catalina.sh", "run"]
